@@ -1,0 +1,167 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Library lab</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Sciencelab Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="/static/js/jquery-1.8.3.min.js"></script>
+<script src="/static/js/modernizr.custom.97074.js"></script>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+ <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+
+<script src="/static/js/jquery.chocolat.js"></script>
+		<link rel="stylesheet" href="/static/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+		<!--light-box-files -->
+		<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('.gallery a').Chocolat();
+		});
+		</script>
+
+
+</head>
+<body>
+	<div class="header" id="home">
+		<div class="header-top">
+			<div class="container">
+			   <div class="logo">
+				  <a href="/">Library<span>lab</span></a>
+				</div>
+				<div class="top-menu">
+					<span class="menu"><img src="/static/images/nav.png" alt=""/> </span>
+						<ul>
+						<li><a href="#home" class="active scroll">home</a></li>
+						<li><a href="#aboutus" class="scroll">login</a></li>
+						<li><a href="#blog" class="scroll">good book</a></li>
+					</ul>
+				</div>
+					 <!--script-nav-->
+						 <script>
+						 $("span.menu").click(function(){
+						 $(".top-menu ul").slideToggle("slow" , function(){
+						 });
+						 });
+						 </script>
+
+						<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+			<div class="about-section" id="aboutus">
+				<div class="container">
+					<h3>welcome to the laboratory !</h3>
+					    <div class="about-grids">
+
+								<div class="clearfix"></div>
+            <form action="/login/" method="post">
+            <div class="control-group">
+                <label class="control-label" for="input_username">账号</label>
+                <div class="controls">
+                    <input type="text" id="input_username" name="username" placeholder="请输入用户名或者邮箱" class="span3">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="input_password">密码</label>
+                <div class="controls">
+                    <input type="password" id="input_password" name="password" placeholder="请输入密码" class="span3">
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary J_ajax_submit_btn" type="submit">确定</button>
+            </div>
+            </form>
+                        </div>
+					</div>
+				</div>
+    </div>
+
+<!--start-blog-->
+		<div id="blog" class="blog-section">
+		   <div class="container">
+               {% for i in book_list %}
+        {% cycle 'a' 'b' as c %}
+        {% if c == 'a' %}
+          <div class="blog">
+				   <div class="col-md-4 blog-text">
+					    <a href="#" class="mask"><img src="{{ i.picture }}" alt="image" class="img-responsive zoom-img"></a>
+				   </div>
+					<div class="col-md-8 welcome-img">
+					  <h4><a href="#">书名：{{ i.title }}</a></h4>
+                        <p><span></span></p>
+                        <p><span>作者：{{ i.auther }}</span></p>
+                        <p><span>出版社：{{ i.publisher }}</span></p>
+                        <p><span>页数：{{ i.page_num }}</span></p>
+                        <p><span>索引号：{{ i.index }}</span></p>
+                        <p><span></span></p>
+                        <p><span></span></p>
+					</div>
+				   <div class="clearfix"> </div>
+			   </div>
+        {% else %}
+            <div class="blog">
+				 <div class="col-md-4 blog-text two">
+					<a href="#" class="mask"><img src="{{ i.picture }}" alt="image" class="img-responsive zoom-img"></a>
+				   </div>
+					<div class="col-md-8 blog-img two">
+					<h4><a href="#">书名：{{ i.title }}</a></h4>
+                        <p><span></span></p>
+                        <p><span>作者：{{ i.auther }}</span></p>
+                        <p><span>出版社：{{ i.publisher }}</span></p>
+                        <p><span>页数：{{ i.page_num }}</span></p>
+                        <p><span>索引号：{{ i.index }}</span></p>
+                        <p><span></span></p>
+                        <p><span></span></p>
+					</div>
+				   <div class="clearfix"> </div>
+			   </div>
+        {% endif %}
+    {% endfor %}
+		</div>
+	</div>
+
+
+
+
+	<div class="footer-section">
+						<div class="container">
+							<div class="footer-bottom">
+						<p>Copyright &copy; 2015 <span>Sciencelab.</span> All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+									</div>
+							<script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear'
+					 		};
+							*/
+
+							$().UItoTop({ easingType: 'easeOutQuart' });
+
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+				</div>
+			</div>
+</body>
+</html>

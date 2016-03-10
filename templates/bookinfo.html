@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div>
+        <div>
+            <p>
+                <span>{{ bookinfo.title }}</span>
+            </p>
+        </div>
+        <div>
+            <div class="image">
+                <img src="#">
+            </div>
+            <div class="text">
+                    <p><span></span></p>
+                    <p><span></span></p>
+                    <p><span>书名：{{ bookinfo.title }}</span></p>
+                    <p><span>作者：{{ bookinfo.auther }}</span></p>
+                    <p><span>出版社：{{ bookinfo.publisher }}</span></p>
+                    <p><span>页数：{{ bookinfo.page_num }}</span></p>
+                    <p><span>索引号：{{ bookinfo.index }}</span></p>
+                    <p><span></span></p>
+                    <p><span></span></p>
+            </div>
+            <div>
+                <p><span></span></p>
+                <p><span></span></p>
+                <p><span>内容简介&nbsp; · · · · · ·</span></p>
+                <p>{{ bookinfo.info }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

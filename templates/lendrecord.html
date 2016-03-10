@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <div class="top-comments">
+			<h3>Lend Records</h3>
+
+			<div class="met">
+				 <div>
+                <HR align=center width=300 color="brown" SIZE=1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>书名</td>
+                            <td>索取号</td>
+                            <td>借书日期</td>
+                            <td>还书日期</td>
+                            <td>状态</td>
+                        </tr>
+                                        <HR align=center width=300 color="brown" SIZE=1>
+                        {% for i in lend_record %}
+                            <tr>
+                                <td>{{ i.book.title }}</td>
+                                <td>{{ i.book.index }}</td>
+                                <td>{{ i.begin_time }}</td>
+                                <td>{{ i.end_time }}</td>
+                                <td>{{ i.is_return }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+			</div>
+
+		</div>
+{% endblock %}
